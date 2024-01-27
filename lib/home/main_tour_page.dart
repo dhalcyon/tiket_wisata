@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tiket_wisata/home/body_tour_page.dart';
 import 'package:tiket_wisata/utils/colors.dart';
+import 'package:tiket_wisata/widgets/high_text.dart';
+import 'package:tiket_wisata/widgets/medium_text.dart';
 
 class MainTourPage extends StatefulWidget {
   const MainTourPage({Key? key}) : super(key: key);
@@ -23,8 +26,13 @@ class _MainTourPageState extends State<MainTourPage> {
               children: [
                 Column(
                   children: [
-                    Text("Negara"),
-                    Text("Kota"),
+                    HighText(text: "Negara", color: TheColors.basicColor),
+                    Row(
+                      children: [
+                        Icon(Icons.arrow_drop_down_circle_rounded),
+                        MediumText(text: "Kotak", color: TheColors.greyColor),
+                      ],
+                    ),
                   ],
                 ),
                 Center(
@@ -33,8 +41,8 @@ class _MainTourPageState extends State<MainTourPage> {
                     height: 45,
                     child: Icon(Icons.search, color: Colors.white),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: TheColors.mainColor,
+                      borderRadius: BorderRadius.circular(30),
+                      color: TheColors.basicColor,
                     ),
                   ),
                 )
@@ -42,6 +50,7 @@ class _MainTourPageState extends State<MainTourPage> {
             ),
           ),
         ),
+        BodyTourPage(),
       ],
     ));
   }
